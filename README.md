@@ -1,7 +1,4 @@
 # wordclock_rspby
 
-### links
+TODO
 
-https://github.com/bk1285/rpi_wordclock
-
-https://github.com/perryrh0dan/qlock

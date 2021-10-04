@@ -25,20 +25,20 @@ def create_letter_list(string):
 
 
 def create_2d_array(config):
-    rows = []
+    letters = []
     led_numbers = []
-    for row in config["letters"]:
-        chars = row["chars"]
+    for row in config["panel_led_char_map"]:
+        chars = row["letters"]
         left_led_number = row["left_led_number"]
         right_led_number = row["right_led_number"]
 
-        rows.append(create_letter_list(chars))
+        letters.append(create_letter_list(chars))
         led_numbers.append(create_row_numbers(left=left_led_number, right=right_led_number))
 
-    array_rows = np.array(rows, dtype='U1')
+    array_letters = np.array(letters, dtype='U1')
     array_leds = np.array(led_numbers)
 
-    return array_leds, array_rows
+    return array_leds, array_letters
 
 
 class Word:
@@ -56,7 +56,7 @@ class Word:
 
 
 config = get_layout_config(filepath=os.path.join(os.getcwd(), "main\\layout_config.json"))
-array_leds, array_rows = create_2d_array(config)
+array_leds, array_letters = create_2d_array(config)
 
 
 test = Layout(layout_config=config)

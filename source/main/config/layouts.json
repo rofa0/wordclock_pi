@@ -1,0 +1,141 @@
+{
+  "panel_led_char_map" : [
+    {
+      "letters":"ESKISCHAFÜF",
+      "left_led_number":100,
+      "right_led_number":110
+    },
+    {
+      "letters":"VIERTUBFZÄÄ",
+      "left_led_number":99,
+      "right_led_number": 89
+    },
+    {
+      "letters":"ZWÄNZGSIVOR",
+      "left_led_number":78,
+      "right_led_number": 88
+    },
+    {
+      "letters":"ABOHAUBIEGE",
+      "left_led_number":77,
+      "right_led_number": 67
+    },
+    {
+      "letters":"EISZWÖISDRÜ",
+      "left_led_number":56,
+      "right_led_number": 66
+    },
+    {
+      "letters":"VIERIFÜFIQT",
+      "left_led_number":55,
+      "right_led_number": 45
+    },
+    {
+      "letters":"SÄCHSISIBNI",
+      "left_led_number":34,
+      "right_led_number": 44
+    },
+    {
+      "letters":"ACHTINÜNIEL",
+      "left_led_number":33,
+      "right_led_number": 23
+    },
+    {
+      "letters":"ZÄNIERBÖUFI",
+      "left_led_number":12,
+      "right_led_number": 22
+    },
+    {
+      "letters":"ZWÖUFINAUHR",
+      "left_led_number":11,
+      "right_led_number": 1
+    }
+  ],
+
+  "time_text_definition" :
+  {
+    "past" : "AB",
+    "to" : "VOR",
+    "five" : "FÜF",
+    "ten" : "ZÄÄ",
+    "half" : "HAUBI",
+    "twenty": "ZWÄNZG",
+    "quarter" : "VIERTU"
+  },
+
+  "other_text_definition" :
+  {
+    "clock" : "UHR"
+  },
+
+
+  "hours" : [
+    {
+      "hour": 1,
+      "letters" : "EIS"
+    },
+    {
+      "hour": 2,
+      "letters" : "ZWÖI"
+    },
+    {
+      "hour": 3,
+      "letters" : "DRÜ"
+    },
+    {
+      "hour": 4,
+      "letters" : "VIERI"
+    },
+    {
+      "hour": 5,
+      "letters" : "FÜFI"
+    },
+    {
+      "hour": 6,
+      "letters" : "SÄCHSI"
+    },
+    {
+      "hour": 7,
+      "letters" : "SIBNI"
+    },
+    {
+      "hour": 8,
+      "letters" : "ACHTI"
+    },
+    {
+      "hour": 9,
+      "letters" : "NÜNI"
+    },
+    {
+      "hour": 10,
+      "letters" : "ZÄNI"
+    },
+    {
+      "hour": 11,
+      "letters" : "ÖUFI"
+    },
+    {
+      "hour": 12,
+      "letters" : "ZWÖUFI"
+    }
+  ],
+
+  "corners" : [
+    {
+      "minute": 1,
+      "led": 112
+    },
+    {
+      "minute": 2,
+      "led": 111
+    },
+    {
+      "minute": 3,
+      "led": 0
+    },
+    {
+      "minute": 4,
+      "led": 113
+    }
+  ]
+}

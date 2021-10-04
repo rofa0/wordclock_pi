@@ -67,9 +67,9 @@ class Layout:
      """
 
     def __init__(self, layout_config):
-        self._text_config: List = layout_config["TEXT"]
-        self._ecken_config: List = layout_config["ECKEN"]
-        self._stunden_config: List = layout_config["STUNDEN"]
+        self._text_config: List = layout_config["text_definition"]
+        self._ecken_config: List = layout_config["corners"]
+        self._stunden_config: List = layout_config["hours"]
 
     def _get_leds_from_text(self, strings: List[str]) -> List[int]:
         leds = []

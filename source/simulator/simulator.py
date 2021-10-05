@@ -1,9 +1,12 @@
+import datetime
+
 import numpy as np
 import numpy.ma as ma
 
 import os
 from main.config.parse_layouts import read_from_file
 from main.led_char_map import LedCharMap
+from led_image import LedImage
 
 # image processing
 import cv2
@@ -108,9 +111,6 @@ if __name__ == "__main__":
 
     img = cv2.imread(front_image, cv2.IMREAD_UNCHANGED)
 
-
-
-
     # restrict contours
     print(img.shape)
     height, width = img.shape[:2]
@@ -147,33 +147,27 @@ if __name__ == "__main__":
 
     # create raster x coordinates
     raster_x_coordinates = []
-    sum = delta_x_pixel
-    for x in range(raster_x_count + 1):
+    sum = delta_x_pixel + raster_width_pixel
+    for x in range(raster_x_count - 2):
         raster_x_coordinates.append(sum)
         sum += raster_width_pixel
 
     # create raster y coordinates
     raster_y_coordinates = []
-    sum = delta_y_pixel
-    for y in range(raster_y_count + 1):
+    sum = delta_y_pixel + raster_height_pixel
+    for y in range(raster_y_count - 2):
         raster_y_coordinates.append(sum)
         sum += raster_height_pixel
 
-
+    led_images = []
     # loop over y coordinates
     for idx_y, y_cord in enumerate(raster_y_coordinates):
-        if idx_y == len(raster_y_coordinates) - 1:
-            y_max = int(clock_height_pixel)
-        else:
-            y_max = int(raster_y_coordinates[idx_y + 1])
+        y_max = int(y_cord + raster_height_pixel)
         y_min = int(y_cord)
 
         # loop over x coordinates
         for idx_x, x_cord in enumerate(raster_x_coordinates):
-            if idx_x == len(raster_x_coordinates) - 1:
-                x_max = int(clock_width_pixel)
-            else:
-                x_max = int(raster_x_coordinates[idx_x + 1])
+            x_max = int(x_cord + raster_width_pixel)
             x_min = int(x_cord)
 
             crop_img = img[y_min:y_max, x_min:x_max]
@@ -193,32 +187,86 @@ if __name__ == "__main__":
                 width_max = (x_max - x_min) * 0.8  # treshold to 80 percent of total width
                 height_max = (y_max - y_min) * 0.8
                 if (w < width_max) and (h < height_max):
-                     contours_filtered.append(cnt)
+                    contours_filtered.append(cnt)
 
             if contours_filtered:
                 # create an empty image for contours
-                img_contours = np.zeros(crop_img.shape)
-                # draw the contours on the empty image
+                empty_image = np.zeros(crop_img.shape)
+                led_image = LedImage(location_x=y_min,
+                                     location_y=x_min,
+                                     contours=contours_filtered,
+                                     empty_image=empty_image,
+                                     led_number=led_char_map.led_number_matrix[idx_y, idx_x],
+                                     led_char=led_char_map.letter_matrix[idx_y, idx_x])
 
-                cv2.drawContours(img_contours, contours_filtered, -1, (255,255,255), thickness=cv2.FILLED)
+                led_images.append(led_image)
 
+    # led_image = led_images[20]
+    # img = led_image.show(r=255, g=0, b=0, image=img)
+    # print(led_image)
 
-                cv2.imshow("Test", img_contours)
-                cv2.waitKey(0)
-                # # closing all open windows
-                cv2.destroyAllWindows()
+    leds = get_leds(hour=datetime.datetime.now().hour,
+                    minute=datetime.datetime.now().minute)
 
+    for led_image in led_images:
+        if led_image.led_number in leds:
+            img = led_image.on(r=255, g=0, b=0, image=img)
+            print(led_image)
+        else:
+            img = led_image.off(image=img)
+            print(led_image)
 
-        # for cnt in contours:
-        #     x, y, w, h = cv2.boundingRect(cnt)
-        #
-        #     rect = cv2.minAreaRect(cnt)  # I have used min Area rect for better result
-        #     width = rect[1][0]
-        #     height = rect[1][1]
-        #
-        #     if (width < widthMax) and (height < heightMax) and (x > x_max) and (x < x_min):
-        #         contours_filt.append(cnt)
-        #         print(x, y)
+    # sim_time = []
+    # for hour in range(0, 24):
+    #     for minute in range(0, 60):
+    #         display = "{:02d}:{:02d}".format(hour, minute)
+    #
+    #         clock = simulate_wordclock(hour, minute)
+    #         sim_time.append([display, clock])
+    #         print(display)
+    #         print(ndtotext(clock))
+    #         print("")
+    #         print("")
+
+    cv2.imshow("Roger's Wordclock Simulator", img)
+    cv2.waitKey(0)
+    # # closing all open windows
+    cv2.destroyAllWindows()
+
+    # for i in range(0,110):
+    #     color = (15,15,15)
+    #
+    #     index = i
+    #     contours = test[index][0]
+    #     empty_image = test[index][2]
+    #     loc = test[index][1]
+    #     x_min = loc[0]
+    #     x_max = loc[1]
+    #     y_min = loc[2]
+    #     y_max = loc[3]
+    #
+    #     shape = empty_image.shape
+    #     cv2.drawContours(empty_image, contours, -1, color, thickness=cv2.FILLED)
+    #
+    #     img[x_min: x_min + shape[0], y_min:y_min + shape[1]] = empty_image
+    #
+    # cv2.imshow("Test", img)
+    # cv2.waitKey(0)
+    # # # closing all open windows
+    # cv2.destroyAllWindows()
+    #
+    # breakpoint()
+
+    # for cnt in contours:
+    #     x, y, w, h = cv2.boundingRect(cnt)
+    #
+    #     rect = cv2.minAreaRect(cnt)  # I have used min Area rect for better result
+    #     width = rect[1][0]
+    #     height = rect[1][1]
+    #
+    #     if (width < widthMax) and (height < heightMax) and (x > x_max) and (x < x_min):
+    #         contours_filt.append(cnt)
+    #         print(x, y)
 
     # create an empty image for contours
     # img_contours = np.zeros(img.shape)
@@ -235,14 +283,4 @@ if __name__ == "__main__":
     # cv2.destroyAllWindows()
     #
     #
-    # # sim_time = []
-    # # for hour in range(0, 24):
-    # #     for minute in range(0, 60):
-    # #         display = "{:02d}:{:02d}".format(hour, minute)
-    # #
-    # #         clock = simulate_wordclock(hour, minute)
-    # #         sim_time.append([display, clock])
-    # #         print(display)
-    # #         print(ndtotext(clock))
-    # #         print("")
-    # #         print("")
+

@@ -1,32 +1,15 @@
-from main.wordclock import Wordclock as wordclock
 import numpy as np
 import numpy.ma as ma
 
-LETTER_MAP = np.array([
-    ["E", "S", "K", "I", "S", "C", "H", "A", "F", "Ü", "F"],
-    ["V", "I", "E", "R", "T", "U", "B", "F", "Z", "Ä", "Ä"],
-    ["Z", "W", "Ä", "N", "Z", "G", "S", "I", "V", "O", "R"],
-    ["A", "B", "O", "H", "A", "U", "B", "I", "E", "G", "E"],
-    ["E", "I", "S", "Z", "W", "Ö", "I", "S", "D", "R", "Ü"],
-    ["V", "I", "E", "R", "I", "F", "Ü", "F", "I", "Q", "T"],
-    ["S", "Ä", "C", "H", "S", "I", "S", "I", "B", "N", "I"],
-    ["A", "C", "H", "T", "I", "N", "Ü", "N", "I", "E", "L"],
-    ["Z", "Ä", "N", "I", "E", "R", "B", "Ö", "U", "F", "I"],
-    ["Z", "W", "Ö", "U", "F", "I", "N", "A", "U", "H", "R"]
-])
+import os
+from main.config.parse_layouts import read_from_file
+from main.led_char_map import LedCharMap
 
-LED_MAP = np.array([
-    [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110],
-    [99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89],
-    [78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88],
-    [77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67],
-    [56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66],
-    [55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45],
-    [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44],
-    [33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23],
-    [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
-    [11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-])
+# image processing
+import cv2
+
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def get_leds(hour, minute):
@@ -40,41 +23,41 @@ def get_leds(hour, minute):
 
     # Wortuhr hat 12 Stunden und nicht 24:
     if hour > 12:
-        leds_on.extend(wordclock.STUNDEN[hour - 12])
+        leds_on.extend(led_char_map.hours[hour - 12])
 
     # bei 0 Uhr ist es zwölf
     elif hour == 0:
 
-        leds_on.extend(wordclock.STUNDEN[12])
+        leds_on.extend(led_char_map.hours[12])
 
     # Sonst die aktuelle Stunde verwenden
     else:
-        leds_on.extend(wordclock.STUNDEN[hour])
+        leds_on.extend(led_char_map.hours[hour])
 
     # Anzeigen der einzelnen Minuten
     if minute_round != 0:
-        leds_on.extend(wordclock.MINUTEN[minute_round])
+        leds_on.extend(led_char_map.minutes[minute_round])
 
     # # Anzeigen von UHR
     # if uhr:
     #     leds_on.extend(UHR)
 
     # Für die vier LEDS in den Ecken:
-    additional_minutes = minute % 10
-    if 0 < additional_minutes < 5:
-        leds_on.extend(wordclock.ECKEN[additional_minutes])
-
-    if additional_minutes > 5:
-        leds_on.extend(wordclock.ECKEN[additional_minutes - 5])
+    # additional_minutes = minute % 10
+    # if 0 < additional_minutes < 5:
+    #     leds_on.extend(led_char_map.corners[additional_minutes])
+    #
+    # if additional_minutes > 5:
+    #     leds_on.extend(led_char_map.corners[additional_minutes - 5])
 
     return leds_on
 
 
 def simulate_wordclock(hour, minute):
-    led_map_copy = np.copy(LED_MAP)
+    led_map_copy = np.copy(led_char_map.led_number_matrix)
     for value in get_leds(hour, minute):
         led_map_copy[led_map_copy == value] = "0"
-    c = ma.masked_where(led_map_copy != 0, LETTER_MAP)
+    c = ma.masked_where(led_map_copy != 0, led_char_map.letter_matrix)
     return (c)
 
 
@@ -108,16 +91,158 @@ def ndtotext(A, w=None, h=None):
     return s
 
 
+############# image processing ###################
+def simple_edge_detection(image):
+    edges_detected = cv2.Canny(image, 100, 200)
+    images = [image, edges_detected]
+    return images
+
+
 if __name__ == "__main__":
+    config_path = os.path.join(os.getcwd(), "..\\main\\config\\layouts.json")
+    front_image = os.path.join(os.getcwd(), "..\\simulator\\image\\front_swissgerman.png")
 
-    sim_time = []
-    for hour in range(0, 24):
-        for minute in range(0, 60):
-            display = "{:02d}:{:02d}".format(hour, minute)
+    layout_configs = read_from_file(config_path)
+    layout_config = layout_configs[0]
+    led_char_map = LedCharMap(layout_config=layout_config)
 
-            clock = simulate_wordclock(hour, minute)
-            sim_time.append([display, clock])
-            print(display)
-            print(ndtotext(clock))
-            print("")
-            print("")
+    img = cv2.imread(front_image, cv2.IMREAD_UNCHANGED)
+
+
+
+
+    # restrict contours
+    print(img.shape)
+    height, width = img.shape[:2]
+
+    widthMax = width / 10
+    heightMax = height / 10
+
+    contours_filt = []
+
+    clock_width_mm = 460
+    clock_height_mm = 460
+
+    factor_pixel_mm = width / clock_width_mm
+
+    clock_width_pixel = clock_width_mm * factor_pixel_mm
+    clock_height_pixel = clock_height_mm * factor_pixel_mm
+
+    raster_width_mm = 33.33
+    raster_height_mm = 36
+
+    raster_width_pixel = raster_width_mm * factor_pixel_mm
+    raster_height_pixel = raster_height_mm * factor_pixel_mm
+
+    raster_x_count = int(clock_width_mm / raster_width_mm)
+    raster_y_count = int(clock_height_mm / raster_height_mm)
+
+    delta_x_mm = (clock_width_mm - raster_x_count * raster_width_mm) / 2
+    delta_y_mm = (clock_height_mm - raster_y_count * raster_height_mm) / 2
+
+    delta_x_pixel = delta_x_mm * factor_pixel_mm
+    delta_y_pixel = delta_y_mm * factor_pixel_mm
+
+    print(delta_x_mm, delta_x_pixel)
+
+    # create raster x coordinates
+    raster_x_coordinates = []
+    sum = delta_x_pixel
+    for x in range(raster_x_count + 1):
+        raster_x_coordinates.append(sum)
+        sum += raster_width_pixel
+
+    # create raster y coordinates
+    raster_y_coordinates = []
+    sum = delta_y_pixel
+    for y in range(raster_y_count + 1):
+        raster_y_coordinates.append(sum)
+        sum += raster_height_pixel
+
+
+    # loop over y coordinates
+    for idx_y, y_cord in enumerate(raster_y_coordinates):
+        if idx_y == len(raster_y_coordinates) - 1:
+            y_max = int(clock_height_pixel)
+        else:
+            y_max = int(raster_y_coordinates[idx_y + 1])
+        y_min = int(y_cord)
+
+        # loop over x coordinates
+        for idx_x, x_cord in enumerate(raster_x_coordinates):
+            if idx_x == len(raster_x_coordinates) - 1:
+                x_max = int(clock_width_pixel)
+            else:
+                x_max = int(raster_x_coordinates[idx_x + 1])
+            x_min = int(x_cord)
+
+            crop_img = img[y_min:y_max, x_min:x_max]
+
+            # convert img to grey
+            img_grey = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)
+            # set a thresh
+            thresh = 150
+            # get threshold image
+            ret, thresh_img = cv2.threshold(img_grey, thresh, 255, cv2.THRESH_BINARY)
+            # find contours
+            contours, hierarchy = cv2.findContours(thresh_img, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+            contours_filtered = []
+            for cnt in contours:
+                x, y, w, h = cv2.boundingRect(cnt)
+                width_max = (x_max - x_min) * 0.8  # treshold to 80 percent of total width
+                height_max = (y_max - y_min) * 0.8
+                if (w < width_max) and (h < height_max):
+                     contours_filtered.append(cnt)
+
+            if contours_filtered:
+                # create an empty image for contours
+                img_contours = np.zeros(crop_img.shape)
+                # draw the contours on the empty image
+
+                cv2.drawContours(img_contours, contours_filtered, -1, (255,255,255), thickness=cv2.FILLED)
+
+
+                cv2.imshow("Test", img_contours)
+                cv2.waitKey(0)
+                # # closing all open windows
+                cv2.destroyAllWindows()
+
+
+        # for cnt in contours:
+        #     x, y, w, h = cv2.boundingRect(cnt)
+        #
+        #     rect = cv2.minAreaRect(cnt)  # I have used min Area rect for better result
+        #     width = rect[1][0]
+        #     height = rect[1][1]
+        #
+        #     if (width < widthMax) and (height < heightMax) and (x > x_max) and (x < x_min):
+        #         contours_filt.append(cnt)
+        #         print(x, y)
+
+    # create an empty image for contours
+    # img_contours = np.zeros(img.shape)
+    # # draw the contours on the empty image
+    # rgb = (255, 0, 0)
+    # cv2.drawContours(img_contours, contours, -1, rgb, thickness=cv2.FILLED)
+    #
+    # cv2.imshow("Test", img_contours)
+    # # waits for user to press any key
+    # # (this is necessary to avoid Python kernel form crashing)
+    # cv2.waitKey(0)
+    #
+    # # closing all open windows
+    # cv2.destroyAllWindows()
+    #
+    #
+    # # sim_time = []
+    # # for hour in range(0, 24):
+    # #     for minute in range(0, 60):
+    # #         display = "{:02d}:{:02d}".format(hour, minute)
+    # #
+    # #         clock = simulate_wordclock(hour, minute)
+    # #         sim_time.append([display, clock])
+    # #         print(display)
+    # #         print(ndtotext(clock))
+    # #         print("")
+    # #         print("")

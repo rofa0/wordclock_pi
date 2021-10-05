@@ -1,6 +1,5 @@
-from typing import Dict
-from main.models.layout_config_info import LayoutConfigInfo
-from main.models.layout_config_definition import LayoutConfigDefinition
+from main.config.models.layout_config_definition import LayoutConfigDefinition
+from main.config.models.layout_config_info import LayoutConfigInfo
 
 
 class LayoutConfig:
@@ -10,9 +9,9 @@ class LayoutConfig:
         self._layout_config_definition: LayoutConfigDefinition = layout_config_definition
 
     @property
-    def config_info(self):
+    def info(self) -> LayoutConfigInfo:
         return self._layout_config_info
 
     @property
-    def config_definition(self):
+    def definition(self) -> LayoutConfigDefinition:
         return self._layout_config_definition

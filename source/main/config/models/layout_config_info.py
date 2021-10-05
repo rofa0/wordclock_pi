@@ -12,3 +12,11 @@ class LayoutConfigInfo:
     @property
     def dialect(self) -> str:
         return self._dict.get("dialect")
+
+    @property
+    def rows_count(self) -> int:
+        return self._dict.get("rows_count")
+
+    @property
+    def columns_count(self) -> int:
+        return self._dict.get("columns_count")

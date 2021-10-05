@@ -3,7 +3,9 @@
     {
       "info": {
         "language": "swissgerman",
-        "dialect": "bern"
+        "dialect": "bern",
+        "rows_count": 10,
+        "columns_count": 11
       },
       "definition": {
         "panel_led_char_map": [
@@ -56,13 +58,13 @@
             "right_led_number": 23
           },
           {
-            "row_number_from_top": 8,
+            "row_number_from_top": 9,
             "letters": "ZÄNIERBÖUFI",
             "left_led_number": 12,
             "right_led_number": 22
           },
           {
-            "row_number_from_top": 9,
+            "row_number_from_top": 10,
             "letters": "ZWÖUFINAUHR",
             "left_led_number": 11,
             "right_led_number": 1
@@ -97,7 +99,9 @@
             "quarter": "VIERTU"
           },
           "other": {
-            "clock": "UHR"
+            "clock": "UHR",
+            "it": "ES",
+            "is": "ISCH"
           },
           "hours": [
             {
@@ -155,7 +159,9 @@
     {
       "info": {
         "language": "swissgerman",
-        "dialect": "solothurn"
+        "dialect": "solothurn",
+        "rows_count": 10,
+        "columns_count": 11
       },
       "definition": {
         "panel_led_char_map": [
@@ -249,7 +255,9 @@
             "quarter": "VIERTU"
           },
           "other": {
-            "clock": "UHR"
+            "clock": "UHR",
+            "it": "ES",
+            "is": "ISCH"
           },
           "hours": [
             {
@@ -307,7 +315,9 @@
     {
       "info": {
         "language": "english",
-        "dialect": null
+        "dialect": null,
+        "rows_count": 10,
+        "columns_count": 11
       },
       "definition": {
         "panel_led_char_map": [
@@ -401,7 +411,9 @@
             "quarter": "VIERTU"
           },
           "other": {
-            "clock": "UHR"
+            "clock": "UHR",
+            "it": "ES",
+            "is": "ISCH"
           },
           "hours": [
             {
@@ -456,5 +468,5 @@
         }
       }
     }
-    ]
+  ]
 }

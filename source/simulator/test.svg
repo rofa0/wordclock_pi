@@ -1,0 +1,224 @@
+<svg width='460mm' height='460mm' viewBox='0 0 460 460' xmlns='http://www.w3.org/2000/svg' version='1.2'>
+	<rect fill='(0, 0, 0)' width='460' height='460' 
+y='0' x='0' ry='0' rx='0' />
+ 	<text id = '100' x='63.333333333333314' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 63, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '101' x='96.66666666666666' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 96, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '102' x='130.0' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 130, 255)' font-size='21' text-anchor='middle' >K</text>
+	<text id = '103' x='163.33333333333331' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 163, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '104' x='196.66666666666666' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 196, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '105' x='230.0' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 230, 255)' font-size='21' text-anchor='middle' >C</text>
+	<text id = '106' x='263.3333333333333' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 263, 255)' font-size='21' text-anchor='middle' >H</text>
+	<text id = '107' x='296.66666666666663' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 296, 255)' font-size='21' text-anchor='middle' >A</text>
+	<text id = '108' x='330.0' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 330, 255)' font-size='21' text-anchor='middle' >F</text>
+	<text id = '109' x='363.3333333333333' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 363, 255)' font-size='21' text-anchor='middle' >Ü</text>
+	<text id = '110' x='396.6666666666667' y ='77.0' font-family='Ruler Stencil' 
+fill='rgb(77, 396, 255)' font-size='21' text-anchor='middle' >F</text>
+	<text id = '99' x='63.333333333333314' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 63, 255)' font-size='21' text-anchor='middle' >V</text>
+	<text id = '98' x='96.66666666666666' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 96, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '97' x='130.0' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 130, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '96' x='163.33333333333331' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 163, 255)' font-size='21' text-anchor='middle' >R</text>
+	<text id = '95' x='196.66666666666666' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 196, 255)' font-size='21' text-anchor='middle' >T</text>
+	<text id = '94' x='230.0' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 230, 255)' font-size='21' text-anchor='middle' >U</text>
+	<text id = '93' x='263.3333333333333' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 263, 255)' font-size='21' text-anchor='middle' >B</text>
+	<text id = '92' x='296.66666666666663' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 296, 255)' font-size='21' text-anchor='middle' >F</text>
+	<text id = '91' x='330.0' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 330, 255)' font-size='21' text-anchor='middle' >Z</text>
+	<text id = '90' x='363.3333333333333' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 363, 255)' font-size='21' text-anchor='middle' >Ä</text>
+	<text id = '89' x='396.6666666666667' y ='111.0' font-family='Ruler Stencil' 
+fill='rgb(111, 396, 255)' font-size='21' text-anchor='middle' >Ä</text>
+	<text id = '78' x='63.333333333333314' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 63, 255)' font-size='21' text-anchor='middle' >Z</text>
+	<text id = '79' x='96.66666666666666' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 96, 255)' font-size='21' text-anchor='middle' >W</text>
+	<text id = '80' x='130.0' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 130, 255)' font-size='21' text-anchor='middle' >Ä</text>
+	<text id = '81' x='163.33333333333331' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 163, 255)' font-size='21' text-anchor='middle' >N</text>
+	<text id = '82' x='196.66666666666666' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 196, 255)' font-size='21' text-anchor='middle' >Z</text>
+	<text id = '83' x='230.0' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 230, 255)' font-size='21' text-anchor='middle' >G</text>
+	<text id = '84' x='263.3333333333333' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 263, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '85' x='296.66666666666663' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 296, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '86' x='330.0' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 330, 255)' font-size='21' text-anchor='middle' >V</text>
+	<text id = '87' x='363.3333333333333' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 363, 255)' font-size='21' text-anchor='middle' >O</text>
+	<text id = '88' x='396.6666666666667' y ='145.0' font-family='Ruler Stencil' 
+fill='rgb(145, 396, 255)' font-size='21' text-anchor='middle' >R</text>
+	<text id = '77' x='63.333333333333314' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 63, 255)' font-size='21' text-anchor='middle' >A</text>
+	<text id = '76' x='96.66666666666666' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 96, 255)' font-size='21' text-anchor='middle' >B</text>
+	<text id = '75' x='130.0' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 130, 255)' font-size='21' text-anchor='middle' >O</text>
+	<text id = '74' x='163.33333333333331' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 163, 255)' font-size='21' text-anchor='middle' >H</text>
+	<text id = '73' x='196.66666666666666' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 196, 255)' font-size='21' text-anchor='middle' >A</text>
+	<text id = '72' x='230.0' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 230, 255)' font-size='21' text-anchor='middle' >U</text>
+	<text id = '71' x='263.3333333333333' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 263, 255)' font-size='21' text-anchor='middle' >B</text>
+	<text id = '70' x='296.66666666666663' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 296, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '69' x='330.0' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 330, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '68' x='363.3333333333333' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 363, 255)' font-size='21' text-anchor='middle' >G</text>
+	<text id = '67' x='396.6666666666667' y ='179.0' font-family='Ruler Stencil' 
+fill='rgb(179, 396, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '56' x='63.333333333333314' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 63, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '57' x='96.66666666666666' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 96, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '58' x='130.0' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 130, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '59' x='163.33333333333331' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 163, 255)' font-size='21' text-anchor='middle' >Z</text>
+	<text id = '60' x='196.66666666666666' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 196, 255)' font-size='21' text-anchor='middle' >W</text>
+	<text id = '61' x='230.0' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 230, 255)' font-size='21' text-anchor='middle' >Ö</text>
+	<text id = '62' x='263.3333333333333' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 263, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '63' x='296.66666666666663' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 296, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '64' x='330.0' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 330, 255)' font-size='21' text-anchor='middle' >D</text>
+	<text id = '65' x='363.3333333333333' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 363, 255)' font-size='21' text-anchor='middle' >R</text>
+	<text id = '66' x='396.6666666666667' y ='213.0' font-family='Ruler Stencil' 
+fill='rgb(213, 396, 255)' font-size='21' text-anchor='middle' >Ü</text>
+	<text id = '55' x='63.333333333333314' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 63, 255)' font-size='21' text-anchor='middle' >V</text>
+	<text id = '54' x='96.66666666666666' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 96, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '53' x='130.0' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 130, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '52' x='163.33333333333331' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 163, 255)' font-size='21' text-anchor='middle' >R</text>
+	<text id = '51' x='196.66666666666666' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 196, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '50' x='230.0' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(255, 0, 0)' font-size='21' text-anchor='middle' >F</text>
+	<text id = '49' x='263.3333333333333' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 263, 255)' font-size='21' text-anchor='middle' >Ü</text>
+	<text id = '48' x='296.66666666666663' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 296, 255)' font-size='21' text-anchor='middle' >F</text>
+	<text id = '47' x='330.0' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 330, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '46' x='363.3333333333333' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 363, 255)' font-size='21' text-anchor='middle' >Q</text>
+	<text id = '45' x='396.6666666666667' y ='247.0' font-family='Ruler Stencil' 
+fill='rgb(247, 396, 255)' font-size='21' text-anchor='middle' >T</text>
+	<text id = '34' x='63.333333333333314' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 63, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '35' x='96.66666666666666' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 96, 255)' font-size='21' text-anchor='middle' >Ä</text>
+	<text id = '36' x='130.0' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 130, 255)' font-size='21' text-anchor='middle' >C</text>
+	<text id = '37' x='163.33333333333331' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 163, 255)' font-size='21' text-anchor='middle' >H</text>
+	<text id = '38' x='196.66666666666666' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 196, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '39' x='230.0' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 230, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '40' x='263.3333333333333' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 263, 255)' font-size='21' text-anchor='middle' >S</text>
+	<text id = '41' x='296.66666666666663' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 296, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '42' x='330.0' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 330, 255)' font-size='21' text-anchor='middle' >B</text>
+	<text id = '43' x='363.3333333333333' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 363, 255)' font-size='21' text-anchor='middle' >N</text>
+	<text id = '44' x='396.6666666666667' y ='281.0' font-family='Ruler Stencil' 
+fill='rgb(281, 396, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '33' x='63.333333333333314' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 63, 255)' font-size='21' text-anchor='middle' >A</text>
+	<text id = '32' x='96.66666666666666' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 96, 255)' font-size='21' text-anchor='middle' >C</text>
+	<text id = '31' x='130.0' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 130, 255)' font-size='21' text-anchor='middle' >H</text>
+	<text id = '30' x='163.33333333333331' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 163, 255)' font-size='21' text-anchor='middle' >T</text>
+	<text id = '29' x='196.66666666666666' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 196, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '28' x='230.0' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 230, 255)' font-size='21' text-anchor='middle' >N</text>
+	<text id = '27' x='263.3333333333333' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 263, 255)' font-size='21' text-anchor='middle' >Ü</text>
+	<text id = '26' x='296.66666666666663' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 296, 255)' font-size='21' text-anchor='middle' >N</text>
+	<text id = '25' x='330.0' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 330, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '24' x='363.3333333333333' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 363, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '23' x='396.6666666666667' y ='315.0' font-family='Ruler Stencil' 
+fill='rgb(315, 396, 255)' font-size='21' text-anchor='middle' >L</text>
+	<text id = '12' x='63.333333333333314' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 63, 255)' font-size='21' text-anchor='middle' >Z</text>
+	<text id = '13' x='96.66666666666666' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 96, 255)' font-size='21' text-anchor='middle' >Ä</text>
+	<text id = '14' x='130.0' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 130, 255)' font-size='21' text-anchor='middle' >N</text>
+	<text id = '15' x='163.33333333333331' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 163, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '16' x='196.66666666666666' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 196, 255)' font-size='21' text-anchor='middle' >E</text>
+	<text id = '17' x='230.0' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 230, 255)' font-size='21' text-anchor='middle' >R</text>
+	<text id = '18' x='263.3333333333333' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 263, 255)' font-size='21' text-anchor='middle' >B</text>
+	<text id = '19' x='296.66666666666663' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 296, 255)' font-size='21' text-anchor='middle' >Ö</text>
+	<text id = '20' x='330.0' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 330, 255)' font-size='21' text-anchor='middle' >U</text>
+	<text id = '21' x='363.3333333333333' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 363, 255)' font-size='21' text-anchor='middle' >F</text>
+	<text id = '22' x='396.6666666666667' y ='349.0' font-family='Ruler Stencil' 
+fill='rgb(349, 396, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '11' x='63.333333333333314' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 63, 255)' font-size='21' text-anchor='middle' >Z</text>
+	<text id = '10' x='96.66666666666666' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 96, 255)' font-size='21' text-anchor='middle' >W</text>
+	<text id = '9' x='130.0' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 130, 255)' font-size='21' text-anchor='middle' >Ö</text>
+	<text id = '8' x='163.33333333333331' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 163, 255)' font-size='21' text-anchor='middle' >U</text>
+	<text id = '7' x='196.66666666666666' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 196, 255)' font-size='21' text-anchor='middle' >F</text>
+	<text id = '6' x='230.0' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 230, 255)' font-size='21' text-anchor='middle' >I</text>
+	<text id = '5' x='263.3333333333333' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 263, 255)' font-size='21' text-anchor='middle' >N</text>
+	<text id = '4' x='296.66666666666663' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 296, 255)' font-size='21' text-anchor='middle' >A</text>
+	<text id = '3' x='330.0' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 330, 255)' font-size='21' text-anchor='middle' >U</text>
+	<text id = '2' x='363.3333333333333' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 363, 255)' font-size='21' text-anchor='middle' >H</text>
+	<text id = '1' x='396.6666666666667' y ='383.0' font-family='Ruler Stencil' 
+fill='rgb(383, 396, 255)' font-size='21' text-anchor='middle' >R</text>
+</svg>

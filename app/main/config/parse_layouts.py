@@ -11,7 +11,7 @@ from main.config.models.layout_config_definition import TextDefinitionTime, Text
 from main.config.models.layout_config_info import LayoutConfigInfo
 
 
-def read_from_file(file_path: Path) -> List[LayoutConfig]:
+def read_from_file(file_path: str) -> List[LayoutConfig]:
     with open(file_path, encoding='utf-8') as f:
         layout_dict = json.load(f)
 

@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 import numpy as np
 import numpy.ma as ma
@@ -6,7 +6,7 @@ import numpy.ma as ma
 import os
 from main.config.parse_layouts import read_from_file
 from main.led_char_map import LedCharMap
-from led_image import LedImage
+from simulator.led_image import LedImage
 
 # image processing
 import cv2
@@ -15,45 +15,39 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def get_leds(hour, minute):
+def get_leds(time: datetime, led_char_map):
+    hour = time.hour
+    minute = time.minute
     leds_on = []
-    # Round minute to 5
-    minute_round = int(minute / 5) * 5
+    # Round minute to the nearest 5
+    minute_round = (minute // 5) * 5
 
-    # Prüfen ob mehr als 20 nach, falls ja eine Stunde hinzufügen
+    # If the minute is greater than 20, increment the hour
     if minute_round > 20:
-        hour = hour + 1
+        hour += 1
 
-    # Wortuhr hat 12 Stunden und nicht 24:
+    # Adjust for 12-hour format (word clock often uses 12 hours)
     if hour > 12:
-        leds_on.extend(led_char_map.hours[hour - 12])
-
-    # bei 0 Uhr ist es zwölf
+        hour -= 12
     elif hour == 0:
+        hour = 12
 
-        leds_on.extend(led_char_map.hours[12])
-
-    # Sonst die aktuelle Stunde verwenden
-    else:
+    # Add LEDs for the hour
+    if hour in led_char_map.hours:
         leds_on.extend(led_char_map.hours[hour])
 
-    # Anzeigen der einzelnen Minuten
-    if minute_round != 0:
+    # Add LEDs for the rounded minute
+    if minute_round != 0 and minute_round in led_char_map.minutes:
         leds_on.extend(led_char_map.minutes[minute_round])
 
-    # # Anzeigen von UHR
-    # if uhr:
-    #     leds_on.extend(UHR)
+    # Calculate additional minutes after the nearest 5-minute rounding
+    additional_minutes = minute % 5
+    if additional_minutes > 0:
+        # Use `led_char_map.corners` to add the appropriate corner LED
+        if additional_minutes in led_char_map.corners.keys():
+            leds_on.append(led_char_map.corners[additional_minutes])
 
-    # Für die vier LEDS in den Ecken:
-    # additional_minutes = minute % 10
-    # if 0 < additional_minutes < 5:
-    #     leds_on.extend(led_char_map.corners[additional_minutes])
-    #
-    # if additional_minutes > 5:
-    #     leds_on.extend(led_char_map.corners[additional_minutes - 5])
-
-    return leds_on
+    return leds_on  # List of LED numbers
 
 
 def simulate_wordclock(hour, minute):
@@ -256,7 +250,7 @@ if __name__ == "__main__":
     # cv2.destroyAllWindows()
     #
     # breakpoint()
-
+    #
     # for cnt in contours:
     #     x, y, w, h = cv2.boundingRect(cnt)
     #
@@ -267,8 +261,8 @@ if __name__ == "__main__":
     #     if (width < widthMax) and (height < heightMax) and (x > x_max) and (x < x_min):
     #         contours_filt.append(cnt)
     #         print(x, y)
-
-    # create an empty image for contours
+    #
+    # # create an empty image for contours
     # img_contours = np.zeros(img.shape)
     # # draw the contours on the empty image
     # rgb = (255, 0, 0)
@@ -281,6 +275,6 @@ if __name__ == "__main__":
     #
     # # closing all open windows
     # cv2.destroyAllWindows()
-    #
+    # #
     #
 
